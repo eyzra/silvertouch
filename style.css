@@ -102,6 +102,7 @@ a{
 h2{
   font-family: "Caveat", cursive;
   letter-spacing: 0.02em;
+  font-size: 22px;
 }
 h2.view{
   color: lavender;
@@ -113,8 +114,11 @@ h3, h4{
 
 p{
   line-height: 1.55;
-  font-size: 1rem;
 }
+p, h4{
+  font-family: 'Oswald', sans-serif;
+}
+
 
 
 /*============Navigation bar and media queries ==================*/
@@ -408,89 +412,61 @@ section.about {
   }
 
 
-/*
-  section.skills {
-    background-color: #eeb4aa;
-    padding-top: 80px;
-  }
-  
-  section.skills p:first-of-type {
-    margin-bottom: 40px;
-  }
-  
-  .skills-list {
-    text-align: center;
-    margin-bottom: 2rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
+/*===============Skills Section====================*/
 
-  .skills h3{
-    text-align: center;
-    text-transform: uppercase;
-}
-  
 .skills-name{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) ;
+  row-gap: 3em;
+  column-gap: 2em;
+}
+
+section.skills{
+  height: 50vh;
+  background-image: url(assets/profile-img.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: aliceblue;
+  padding-top: 100px;
+  padding-bottom: 600px;
+}
+
+.skills-header{
+  font-size: 2em;
+  text-decoration: overline;
+}
+
+.skills-header + p{
+  padding-top: 10px;
+  padding-bottom: 40px;
+  font-size: 19px;
+}
+
+.skills-list {
+  border-radius: 50%;
+  border: 4px solid gold;
+  background-color: var(--font-color);
+  padding: 22.5%;
+}
+
+.skills-list p{
   display: flex;
-  flex-direction: row;  
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+ 
 }
 
-.skills-list{
-  padding: 2rem;
-  margin: 0;
-}
-*/
-
-
-/*===============Contact Section===================*/
-
-  section.contact {
-    background-color: #fef2d8;
+/* @media (max-width: 598px){
+  .skills-name{
+    display: inline-block;
+    color: black;
   }
-section.contact.btn{
-    justify-content: center;
-}
+  section.skills{
+    height: auto;
+  }
+} */
 
-
-  .contact-links {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    max-width: 980px;
-    margin-top: 4rem;
-    flex-wrap: wrap;
-  }
-  
-  .contact-details {
-    font-size: 2.4rem;
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .contact-details:hover {
-    transform: translateY(7px);
-  }
-  .contact a{
-      font-size: 0.8em;
-      display: inline-block;
-      padding: 0.7em;
-  }
-
-  .btn{
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #415597;
-      margin: 0.7em;
-      border-radius: 5px;
-  }
 
 /*===============Projects Section=================*/
 
@@ -593,6 +569,69 @@ section.projects h3{
     padding-left: 0;
   }
 }
+
+/*===============Contact Section===================*/
+
+section.contact {
+  background-color: #fef2d8;
+}
+section.contact.btn{
+  justify-content: center;
+}
+
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 980px;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+
+.contact-details {
+  font-size: 2.4rem;
+  transition: transform 0.2s ease-in-out;
+}
+
+.contact-details:hover {
+  transform: translateY(7px);
+}
+.contact a{
+    font-size: 0.8em;
+    display: inline-block;
+    padding: 0.7em;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #415597;
+    margin: 0.7em;
+    border-radius: 5px;
+}
+
+/*===============Footer Section===================*/
+footer{
+  background-color: lightcoral;
+  padding: 20px;
+  color: var(--main-milk);
+  font-family: fantasy;
+  min-width: 100%;
+  height: 70px;
+  font-size: 1.5em;
+  padding-bottom: 45px;
+  margin-bottom: 10px;
+}
+
+footer p{
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+
+
 /*===============Keyframes==================*/
 
 .flash{
@@ -639,22 +678,6 @@ section.projects h3{
   }
 }
 
-/*===============Footer Section===================*/
-footer{
-  background-color: lightcoral;
-  padding: 20px;
-  color: var(--main-milk);
-  font-family: fantasy;
-  min-width: 100%;
-  height: 70px;
-  font-size: 1.5em;
-  padding-bottom: 45px;
-}
-
-footer p{
-  letter-spacing: 2px;
-  text-align: center;
-}
 
 /*================Media queries==================*/
 
@@ -717,6 +740,11 @@ footer p{
     text-align: center;
     justify-content: center;
   }
+  h1{
+    padding-top: 110px;
+    font-size: 1.4em;
+    text-align: center;
+  }
   header{
     font-size: 1rem;
     padding-top: 0;
@@ -729,11 +757,6 @@ footer p{
   .contact{
     text-align: center;
     line-height: 1.9rem;
-  }
-  h1{
-    padding-top: 110px;
-    font-size: 1.4em;
-    text-align: center;
   }
 }
 
@@ -750,59 +773,6 @@ footer p{
   }
 }
 
-
-
-
-.skills-name{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr) ;
-  row-gap: 3em;
-  column-gap: 2em;
-}
-
-section.skills{
-  height: 60vh;
-  background-image: url(assets/profile-img.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  color: aliceblue;
-  padding-top: 100px;
-  padding-bottom: 600px;
-}
-
-.skills-header{
-  font-size: 1.7em;
-}
-
-.skills-header + p{
-  padding-bottom: 40px;
-  font-size: 19px;
-}
-
-.skills-list {
-  border-radius: 50%;
-  border: 4px solid gold;
-  background-color: var(--font-color);
-  padding: 22.5%;
-}
-
-.skills-list p{
-  display: flex;
-  justify-content: center;
-  align-items: center;
- 
-}
-
-/* @media (max-width: 598px){
-  .skills-name{
-    display: inline-block;
-    color: black;
-  }
-  section.skills{
-    height: auto;
-  }
-} */
 
 @media (min-width: 992px){
   section.about .container-details{
@@ -847,6 +817,18 @@ using grid layout */
   }
   .skills{
     padding-bottom: 580px;
+  }
+  .container-img-head{
+    margin-bottom: 20px;
+  }
+  .about-text h2{
+    font-size: 1.7em;
+  }
+  .about .container-text{
+    text-align: center;
+  }
+  h4,p{
+    font-size: 18px;
   }
 }
 
