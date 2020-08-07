@@ -621,8 +621,8 @@ footer{
   min-width: 100%;
   height: 70px;
   font-size: 1.5em;
-  padding-bottom: 45px;
-  margin-bottom: 10px;
+  padding-bottom: 55px;
+  border-bottom: 9px solid var(--font-color);
 }
 
 footer p{
